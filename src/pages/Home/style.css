@@ -1,60 +1,377 @@
-.banner {
-  background-image: url('../assets/banner.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 80vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  text-align: center;
+/* ═══════════════════════════════
+   HOME – ALLSTYLESTORE
+═══════════════════════════════ */
+
+/* ── HERO ── */
+.hero {
   position: relative;
+  overflow: hidden;
+  min-height: 380px;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 24px 56px;
 }
- 
-.banner::before {
-  content: '';
+
+.hero__bg-img {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
 }
- 
-.banner-content {
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    var(--clr-bg) 0%,
+    rgba(13, 26, 31, 0.55) 50%,
+    rgba(13, 26, 31, 0.2) 100%
+  );
+}
+
+.hero__content {
   position: relative;
   z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
- 
-.banner h1 {
-  font-size: 56px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+
+.hero__logo-img {
+  max-width: min(600px, 80vw);
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 4px 24px rgba(0,0,0,0.6));
 }
- 
-.banner p {
-  font-size: 24px;
-  opacity: 0.9;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+
+.hero__title-fallback {
+  font-family: var(--ff-display);
+  font-size: clamp(3rem, 10vw, 7.5rem);
+  letter-spacing: -0.01em;
+  line-height: 0.9;
+  color: var(--clr-white);
+  text-shadow: 0 4px 32px rgba(0,0,0,0.6);
 }
- 
-.banner button {
-  padding: 15px 40px;
-  border-radius: 30px;
-  border: none;
-  background: linear-gradient(135deg, #f093fb, #f5576c);
-  color: #fff;
-  font-size: 18px;
-  font-weight: bold;
+
+.hero__sub {
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--clr-muted);
+}
+
+/* ── VISTA O CAOS ── */
+.caos {
+  padding: 64px 0;
+  background: var(--clr-bg);
+}
+
+.caos__title {
+  font-family: var(--ff-display);
+  font-size: clamp(1.5rem, 4vw, 2.8rem);
+  letter-spacing: 0.04em;
+  color: var(--clr-white);
+  margin-bottom: 28px;
+}
+
+.caos__banner-wrap {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--clr-border);
+}
+
+.caos__banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.caos__banner-wrap:hover .caos__banner-img {
+  transform: scale(1.01);
+}
+
+/* ── BE COULD ── */
+.becould {
+  padding: 48px 0;
+  background: var(--clr-bg-mid);
+}
+
+.becould__img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-md);
+}
+
+/* ── PRODUTOS GRID ── */
+.produtos-grid {
+  padding: 48px 0;
+  background: var(--clr-bg);
+}
+
+.produtos-grid__inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.produto-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.produto-card__img-wrap {
+  position: relative;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  transition: border-color var(--transition);
+}
+
+.produto-card__img-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+}
+
+.produto-card:hover .produto-card__img-wrap {
+  border-color: var(--clr-accent-blue);
+}
+
+.produto-card__quick {
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  background: rgba(122, 200, 232, 0.92);
+  color: var(--clr-bg);
+  font-size: 0.75rem;
+  font-family: var(--ff-body);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.06em;
   cursor: pointer;
-  transition: all 0.3s ease;
-  margin-top: 20px;
+  transition: bottom var(--transition);
+  border: none;
 }
- 
-.banner button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 30px rgba(245, 87, 108, 0.5);
+
+.produto-card:hover .produto-card__quick {
+  bottom: 0;
 }
- 
+
+.produto-card__btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.produto-card__btn img,
+.produto-card__btn-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-sm);
+  transition: opacity var(--transition);
+}
+
+.produto-card__btn:hover img {
+  opacity: 0.85;
+}
+
+.produto-card__bag-icon {
+  width: 32px !important;
+  height: auto !important;
+}
+
+/* fallback btn sem imagem */
+.produto-card__btn span {
+  display: none;
+}
+
+/* ── FEATURED: CASACOS + CAMISETAS ── */
+.featured {
+  padding: 48px 0;
+  background: var(--clr-bg-mid);
+}
+
+.featured__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+/* Casacos */
+.featured__casacos {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.featured__casacos-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.featured__casacos:hover .featured__casacos-img {
+  transform: scale(1.02);
+}
+
+.featured__info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.featured__cat {
+  font-family: var(--ff-display);
+  font-size: 2rem;
+  letter-spacing: 0.04em;
+  color: var(--clr-white);
+}
+
+.featured__cta {
+  display: inline-block;
+}
+
+.featured__cta-img {
+  max-width: 160px;
+  height: auto;
+}
+
+/* Camisetas */
+.featured__camisetas {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.featured__camisetas-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-md);
+}
+
+.featured__camisetas-btn {
+  display: block;
+}
+
+.featured__camisetas-btn img {
+  max-width: 180px;
+  height: auto;
+  transition: opacity var(--transition);
+}
+
+.featured__camisetas-btn:hover img {
+  opacity: 0.85;
+}
+
+/* ── SALE BANNER ══ */
+.sale-banner {
+  padding: 64px 0;
+  background: var(--clr-bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.sale-banner__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.sale-banner__titulo-img {
+  max-width: 320px;
+  width: 100%;
+  height: auto;
+}
+
+.sale-banner__main {
+  width: 100%;
+  max-width: 900px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.sale-banner__img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.sale-banner__btn-wrap {
+  display: inline-block;
+  transition: transform var(--transition);
+}
+
+.sale-banner__btn-wrap:hover {
+  transform: translateX(6px);
+}
+
+.sale-banner__btn-img {
+  max-width: 280px;
+  height: auto;
+}
+
+.sale-banner__btn-fallback {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 36px;
+  border: 2px solid var(--clr-white);
+  border-radius: var(--radius-sm);
+  font-family: var(--ff-display);
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+  color: var(--clr-white);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .produtos-grid__inner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .featured__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .produtos-grid__inner {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .hero {
+    min-height: 260px;
+    padding-bottom: 40px;
+  }
+}

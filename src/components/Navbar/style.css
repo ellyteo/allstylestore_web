@@ -1,0 +1,139 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(13, 26, 31, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--clr-border);
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 56px;
+}
+
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  transition: opacity var(--transition);
+}
+
+.navbar__logo:hover {
+  opacity: 0.8;
+}
+
+.navbar__logo-img {
+  height: 28px;
+  width: auto;
+  display: block;
+}
+
+.navbar__logo-text {
+  font-family: var(--ff-display);
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  color: var(--clr-white);
+}
+
+.navbar__links {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.navbar__link {
+  font-size: 0.8rem;
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--clr-muted);
+  transition: color var(--transition);
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.navbar__link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--clr-accent-blue);
+  transition: width var(--transition);
+}
+
+.navbar__link:hover,
+.navbar__link--active {
+  color: var(--clr-white);
+}
+
+.navbar__link:hover::after,
+.navbar__link--active::after {
+  width: 100%;
+}
+
+/* Hamburger */
+.navbar__hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 6px;
+  background: none;
+  border: none;
+}
+
+.navbar__hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--clr-white);
+  border-radius: 2px;
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+.navbar__hamburger--open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.navbar__hamburger--open span:nth-child(2) {
+  opacity: 0;
+}
+.navbar__hamburger--open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+  .navbar__hamburger {
+    display: flex;
+  }
+
+  .navbar__nav {
+    position: fixed;
+    inset: 56px 0 0 0;
+    background: var(--clr-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(100%);
+    transition: transform var(--transition);
+  }
+
+  .navbar__nav--open {
+    transform: translateX(0);
+  }
+
+  .navbar__links {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .navbar__link {
+    font-size: 1.2rem;
+  }
+}

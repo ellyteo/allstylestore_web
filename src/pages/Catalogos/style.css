@@ -1,0 +1,109 @@
+.catalogos {
+  min-height: 80vh;
+}
+
+.catalogos__header {
+  padding: 64px 0 48px;
+  background: linear-gradient(160deg, var(--clr-bg-light) 0%, var(--clr-bg) 100%);
+  border-bottom: 1px solid var(--clr-border);
+}
+
+.catalogos__title {
+  font-family: var(--ff-display);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  letter-spacing: 0.04em;
+  color: var(--clr-white);
+  line-height: 1;
+}
+
+.catalogos__sub {
+  margin-top: 12px;
+  font-size: 0.85rem;
+  color: var(--clr-muted);
+  letter-spacing: 0.06em;
+}
+
+.catalogos__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding: 48px 0;
+}
+
+.cat-card {
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: border-color var(--transition), transform var(--transition);
+}
+
+.cat-card:hover {
+  border-color: var(--clr-accent-blue);
+  transform: translateY(-4px);
+}
+
+.cat-card__thumb {
+  height: 220px;
+  background: var(--cat-bg, var(--clr-surface));
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 20px,
+    rgba(255,255,255,0.02) 20px,
+    rgba(255,255,255,0.02) 22px
+  );
+}
+
+.cat-card__body {
+  padding: 20px;
+  background: var(--clr-surface);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cat-card__temporada {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--clr-accent-blue);
+  font-weight: var(--fw-bold);
+}
+
+.cat-card__titulo {
+  font-family: var(--ff-display);
+  font-size: 1.5rem;
+  letter-spacing: 0.02em;
+  color: var(--clr-white);
+}
+
+.cat-card__itens {
+  font-size: 0.72rem;
+  color: var(--clr-muted);
+}
+
+.cat-card__cta {
+  display: inline-flex;
+  margin-top: 12px;
+  font-size: 0.78rem;
+  font-weight: var(--fw-medium);
+  color: var(--clr-accent-blue);
+  letter-spacing: 0.04em;
+  transition: letter-spacing var(--transition);
+}
+
+.cat-card__cta:hover {
+  letter-spacing: 0.1em;
+}
+
+@media (max-width: 900px) {
+  .catalogos__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .catalogos__grid {
+    grid-template-columns: 1fr;
+  }
+}
