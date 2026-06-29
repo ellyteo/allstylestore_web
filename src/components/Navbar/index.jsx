@@ -18,7 +18,7 @@ export default function Navbar() {
       <div className="navbar__inner">
         <Link to="/" className="navbar__logo" aria-label="AllStyleStore – Página inicial">
           <img
-            src="/banner.png"
+            src="/allstylestore.png"
             alt="AllStyleStore"
             className="navbar__logo-img"
             onError={e => {

@@ -13,7 +13,7 @@ function ProdutoCard({ nome, img, alt, btnLabel }) {
       </div>
       <button className="produto-card__btn">
         <span>{btnLabel || 'Comprar\nagora'}</span>
-        <img src="/casacosButton.png" alt="" aria-hidden="true" className="produto-card__bag-icon" onError={e => e.target.style.display='none'} />
+        <img src="/comprarAgora.png" alt="" aria-hidden="true" className="produto-card__bag-icon" onError={e => e.target.style.display='none'} />
       </button>
     </div>
   )
@@ -43,7 +43,7 @@ export default function Home() {
         <div className="hero__overlay" />
         <div className="hero__content">
           <img
-            src="/banner.png"
+            src="/bannerInteiro.png"
             alt="AllStyleStore"
             className="hero__logo-img"
             onError={e => {
@@ -52,16 +52,12 @@ export default function Home() {
             }}
           />
           <h1 className="hero__title-fallback" style={{ display: 'none' }}>ALLSTYLESTORE</h1>
-          <p className="hero__sub">
-            Estilo não é o que você veste. É como você vive o asfalto.
-          </p>
         </div>
       </section>
 
       {/* ══ VISTA O CAOS – bannerVistaCaos.png ══ */}
       <section className="caos">
         <div className="container">
-          <h2 className="caos__title">VISTA O CAOS COM ESTILO.</h2>
           <div className="caos__banner-wrap">
             <img
               src="/bannerVistaCaos.png"

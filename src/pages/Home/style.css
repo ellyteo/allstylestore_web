@@ -44,7 +44,7 @@
 }
 
 .hero__logo-img {
-  max-width: min(600px, 80vw);
+  max-width: min(2500px, 200vw);
   width: 100%;
   height: auto;
   filter: drop-shadow(0 4px 24px rgba(0,0,0,0.6));
@@ -100,7 +100,7 @@
 /* ── BE COULD ── */
 .becould {
   padding: 48px 0;
-  background: var(--clr-bg-mid);
+  background: var(#0b1e1c);
 }
 
 .becould__img {
@@ -113,7 +113,7 @@
 /* ── PRODUTOS GRID ── */
 .produtos-grid {
   padding: 48px 0;
-  background: var(--clr-bg);
+  background: var(#0b1e1c);
 }
 
 .produtos-grid__inner {
@@ -132,7 +132,7 @@
   position: relative;
   border-radius: var(--radius-sm);
   overflow: hidden;
-  background: var(--clr-surface);
+  background: var(#0b1e1c);
   border: 1px solid var(--clr-border);
   transition: border-color var(--transition);
 }
@@ -195,7 +195,7 @@
 }
 
 .produto-card__bag-icon {
-  width: 32px !important;
+  width: 300px !important;
   height: auto !important;
 }
 
