@@ -26,10 +26,10 @@
   inset: 0;
   background: linear-gradient(
     to top,
-    var(--clr-bg) 0%,
+    --clr-bg) 0%,
     rgba(13, 26, 31, 0.55) 50%,
     rgba(13, 26, 31, 0.2) 100%
-  );
+  ;
 }
 
 .hero__content {
@@ -51,11 +51,11 @@
 }
 
 .hero__title-fallback {
-  font-family: var(--ff-display);
+  font-family: --ff-display;
   font-size: clamp(3rem, 10vw, 7.5rem);
   letter-spacing: -0.01em;
   line-height: 0.9;
-  color: var(--clr-white);
+  color: --clr-white;
   text-shadow: 0 4px 32px rgba(0,0,0,0.6);
 }
 
@@ -63,27 +63,27 @@
   font-size: 0.78rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--clr-muted);
+  color: --clr-muted;
 }
 
 /* ── VISTA O CAOS ── */
 .caos {
   padding: 64px 0;
-  background: var(--clr-bg);
+  background: --clr-bg;
 }
 
 .caos__title {
-  font-family: var(--ff-display);
+  font-family: --ff-display;
   font-size: clamp(1.5rem, 4vw, 2.8rem);
   letter-spacing: 0.04em;
-  color: var(--clr-white);
+  color: --clr-white;
   margin-bottom: 28px;
 }
 
 .caos__banner-wrap {
-  border-radius: var(--radius-md);
+  border-radius: --radius-md;
   overflow: hidden;
-  border: 1px solid var(--clr-border);
+  border: 1px solid --clr-border;
 }
 
 .caos__banner-img {
@@ -100,20 +100,20 @@
 /* ── BE COULD ── */
 .becould {
   padding: 48px 0;
-  background: var(#0b1e1c);
+  background: #0b1e1c;
 }
 
 .becould__img {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: var(--radius-md);
+  border-radius: --radius-md;
 }
 
 /* ── PRODUTOS GRID ── */
 .produtos-grid {
   padding: 48px 0;
-  background: var(#0b1e1c);
+  background: #0b1e1c;
 }
 
 .produtos-grid__inner {
@@ -130,11 +130,11 @@
 
 .produto-card__img-wrap {
   position: relative;
-  border-radius: var(--radius-sm);
+  border-radius: --radius-sm;
   overflow: hidden;
-  background: var(#0b1e1c);
-  border: 1px solid var(--clr-border);
-  transition: border-color var(--transition);
+  background: #0b1e1c;
+  border: 1px solid --clr-border;
+  transition: border-color --transition;
 }
 
 .produto-card__img-wrap img {
@@ -146,7 +146,7 @@
 }
 
 .produto-card:hover .produto-card__img-wrap {
-  border-color: var(--clr-accent-blue);
+  border-color: --clr-accent-blue;
 }
 
 .produto-card__quick {
@@ -156,13 +156,13 @@
   right: 0;
   padding: 10px;
   background: rgba(122, 200, 232, 0.92);
-  color: var(--clr-bg);
+  color: --clr-bg;
   font-size: 0.75rem;
-  font-family: var(--ff-body);
-  font-weight: var(--fw-bold);
+  font-family: --ff-body;
+  font-weight: --fw-bold;
   letter-spacing: 0.06em;
   cursor: pointer;
-  transition: bottom var(--transition);
+  transition: bottom --transition;
   border: none;
 }
 
@@ -186,8 +186,8 @@
   width: 100%;
   height: auto;
   display: block;
-  border-radius: var(--radius-sm);
-  transition: opacity var(--transition);
+  border-radius: --radius-sm;
+  transition: opacity --transition;
 }
 
 .produto-card__btn:hover img {
@@ -207,7 +207,7 @@
 /* ── FEATURED: CASACOS + CAMISETAS ── */
 .featured {
   padding: 48px 0;
-  background: var(--clr-bg-mid);
+  background: --clr-bg-mid;
 }
 
 .featured__grid {
@@ -220,7 +220,7 @@
 /* Casacos */
 .featured__casacos {
   position: relative;
-  border-radius: var(--radius-md);
+  border-radius: --radius-md;
   overflow: hidden;
 }
 
@@ -248,10 +248,10 @@
 }
 
 .featured__cat {
-  font-family: var(--ff-display);
+  font-family: --ff-display;
   font-size: 2rem;
   letter-spacing: 0.04em;
-  color: var(--clr-white);
+  color: --clr-white;
 }
 
 .featured__cta {
@@ -275,7 +275,7 @@
   width: 100%;
   height: auto;
   display: block;
-  border-radius: var(--radius-md);
+  border-radius: --radius-md;
 }
 
 .featured__camisetas-btn {
@@ -285,7 +285,7 @@
 .featured__camisetas-btn img {
   max-width: 180px;
   height: auto;
-  transition: opacity var(--transition);
+  transition: opacity --transition;
 }
 
 .featured__camisetas-btn:hover img {
@@ -295,7 +295,7 @@
 /* ── SALE BANNER ══ */
 .sale-banner {
   padding: 64px 0;
-  background: var(--clr-bg);
+  background: --clr-bg;
   position: relative;
   overflow: hidden;
 }
@@ -316,7 +316,7 @@
 .sale-banner__main {
   width: 100%;
   max-width: 900px;
-  border-radius: var(--radius-md);
+  border-radius: --radius-md;
   overflow: hidden;
 }
 
@@ -328,7 +328,7 @@
 
 .sale-banner__btn-wrap {
   display: inline-block;
-  transition: transform var(--transition);
+  transition: transform --transition;
 }
 
 .sale-banner__btn-wrap:hover {
@@ -345,12 +345,12 @@
   align-items: center;
   gap: 10px;
   padding: 16px 36px;
-  border: 2px solid var(--clr-white);
-  border-radius: var(--radius-sm);
-  font-family: var(--ff-display);
+  border: 2px solid --clr-white;
+  border-radius: --radius-sm;
+  font-family: --ff-display;
   font-size: 1.2rem;
   letter-spacing: 0.1em;
-  color: var(--clr-white);
+  color: --clr-white;
 }
 
 /* ── RESPONSIVE ── */
